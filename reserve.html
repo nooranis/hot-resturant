@@ -74,7 +74,7 @@
     </div>
 
 <script type="text/javascript">
- 
+
 // pull data from on click
   $('#addBtn').on('click', function () {
         console.log("stuff");
@@ -83,10 +83,10 @@
         number: $('#phoneNumber').val().trim(),
         email: $('#customerEmail').val().trim(),
         uniqueID: $('#customerID').val().trim()
-        
+
       };
       console.log(newReservation);
-      // var currentURL = window.location.origin; 
+      var currentURL = window.location.origin; 
       // http://localhost:3000/tables' <<< for testing!!!
       // Question: What does this code do??
       $.post(currentURL + '/api/new', newReservation)
