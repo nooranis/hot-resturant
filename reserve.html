@@ -19,11 +19,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="home">Home</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="home"> HOME</a></li>
         <li ><a href="tables">Tables <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="reserve">Reserve</a></li>
       </ul>
@@ -73,7 +73,35 @@
         </div>
     </div>
 
+<script type="text/javascript">
+ 
+// d
+  $('#addBtn').on('click', function () {
+        console.log("stuff");
+      var newReservation = {
+        name: $('#customerName').val().trim(),
+        number: $('#phoneNumber').val().trim(),
+        email: $('#customerEmail').val().trim(),
+        uniqueID: $('#customerID').val().trim()
+        
+      };
+      console.log(newReservation);
 
+      // var currentURL = window.location.origin; 
+      // http://localhost:3000/tables' <<< for testing!!!
+      // Question: What does this code do??
+      $.post(currentURL + '/api/new', newReservation)
+        .done(function (data) {
+          console.log(data);
+          alert('Reservation added!');
+        });
+
+      return false;
+    });
+
+
+
+  </script>
 
 </body>
 </html>
