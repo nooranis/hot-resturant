@@ -28,17 +28,17 @@ var reservations=[{
 ];
 
 //route to home page
-app.get('/', function (req, res) {
+app.get('/home?', function (req, res) {
 	res.sendFile(path.join(__dirname, 'home.html'));
 });
 
 //route to tables page
-app.get('/tables.html', function (req, res) {
+app.get('/tables', function (req, res) {
 	res.sendFile(path.join(__dirname, 'tables.html'));
 });
 
 //route to reserve
-app.get('/reserve.html', function (req, res) {
+app.get('/reserve', function (req, res) {
 	res.sendFile(path.join(__dirname, 'reserve.html'));
 });
 
